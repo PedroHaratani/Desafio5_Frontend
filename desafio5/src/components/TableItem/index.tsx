@@ -1,17 +1,17 @@
-import { Transferencia } from '../../interfaces';
 import * as C from './styles';
+import { Transferencia } from '../../types/Transferencia';
 
-export type Props = {
-        transf:Transferencia
+type Props = {
+    item: Transferencia
 }
 
-export const TableItem = ({transf}:Props)=>{
-    return(
+export const TableItem = ({ item }: Props) => {
+    return (
         <C.TableLine>
-            <C.TableColumn>{transf.data_transferencia?.toDateString()}</C.TableColumn>
-            <C.TableColumn>{transf.valor}</C.TableColumn>
-            <C.TableColumn>{transf.tipo}</C.TableColumn>
-            <C.TableColumn>{transf.nome_operador_transacao}</C.TableColumn>
+            <C.TableColumn>{item.data_transferencia}</C.TableColumn>
+            <C.TableColumn>{item.valor}</C.TableColumn>
+            <C.TableColumn>{item.tipo}</C.TableColumn>
+            <C.TableColumn>{item.nome_operador_transacao}</C.TableColumn>
         </C.TableLine>
     );
 }
